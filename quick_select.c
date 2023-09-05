@@ -61,7 +61,7 @@ int findKthLargest(int* nums, int numsSize, int k) {
         
     int pivotIndex = partition(nums, 0, numsSize-1);
     if(k-1 < pivotIndex) return findKthLargest(nums, pivotIndex, k);
-    else if(k-1 > pivotIndex) return findKthLargest(nums+pivotIndex+1, numsSize-pivotIndex-1, k-pivotIndex-1);
+    else if(k-1 > pivotIndex) return findKthLargest(nums, numsSize-pivotIndex-1, k-pivotIndex-1);
     return nums[pivotIndex];
 }
 
